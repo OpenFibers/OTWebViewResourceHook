@@ -8,6 +8,10 @@ You may build your own cache or delegate for UIWebView, using NSURLProtocol.
 But how if only some instance of UIWebView need to cache, others not?  
 Now you can use this lib, mark requests you want to process a very key. Then process requests that only have the very key setted in NSURLProtocol.
 
+### How does it work?
+
+Hooked private API `webThreadWebView:resource:willSendRequest:redirectResponse:fromDataSource:`, But should be AppStore-safe.
+
 ### How to use
 
 Just:  
@@ -36,5 +40,5 @@ Then get the result:
 2016-04-11 20:02:43.541 OTWebViewResourceHookDemo[78470:3494621] <NSMutableURLRequest: 0x7fb0c876f1f0> { URL: https://www.google.com/gen_204?v=3&s=mobilewebhp&atyp=csi&ei=YZILV-qAPMSGjwPj_LS4Bg&imc=1&imn=1&imp=0&adh=&xjs=init.28.13.sb_mob.25.mbsf.1.async.1.dvl.1.bbd.0&ima=1&rt=xjsls.206,prt.206,iml.206,dcl.217,xjses.242,xjsee.283,xjs.283,ol.308,aft.206,wsrt.2908,cst.795,dnst.0,rqst.1557,rspt.250,sslt.794,rqstt.1557,unt.1,cstt.761,dit.3126 }
 ```
 
-###LISENCE
+### LISENCE
 MIT.
