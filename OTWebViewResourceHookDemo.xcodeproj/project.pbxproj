@@ -13,6 +13,7 @@
 		4227C3F81CBBBC3900EFB084 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4227C3F61CBBBC3900EFB084 /* Main.storyboard */; };
 		4227C3FA1CBBBC3900EFB084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4227C3F91CBBBC3900EFB084 /* Assets.xcassets */; };
 		4227C3FD1CBBBC3900EFB084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4227C3FB1CBBBC3900EFB084 /* LaunchScreen.storyboard */; };
+		4227C40B1CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 4227C40A1CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		4227C3F91CBBBC3900EFB084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4227C3FC1CBBBC3900EFB084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4227C3FE1CBBBC3900EFB084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4227C4091CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+OTWebViewResourceHook.h"; sourceTree = "<group>"; };
+		4227C40A1CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+OTWebViewResourceHook.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 		4227C3E11CBBBC3900EFB084 = {
 			isa = PBXGroup;
 			children = (
+				4227C4081CBBC5D200EFB084 /* OTWebViewResourceHook */,
 				4227C3EC1CBBBC3900EFB084 /* OTWebViewResourceHookDemo */,
 				4227C3EB1CBBBC3900EFB084 /* Products */,
 			);
@@ -77,6 +81,15 @@
 				4227C3EE1CBBBC3900EFB084 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4227C4081CBBC5D200EFB084 /* OTWebViewResourceHook */ = {
+			isa = PBXGroup;
+			children = (
+				4227C4091CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.h */,
+				4227C40A1CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.m */,
+			);
+			path = OTWebViewResourceHook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4227C3F51CBBBC3900EFB084 /* ViewController.m in Sources */,
+				4227C40B1CBBC5D200EFB084 /* UIWebView+OTWebViewResourceHook.m in Sources */,
 				4227C3F21CBBBC3900EFB084 /* AppDelegate.m in Sources */,
 				4227C3EF1CBBBC3900EFB084 /* main.m in Sources */,
 			);
@@ -300,6 +314,7 @@
 				4227C4031CBBBC3900EFB084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
