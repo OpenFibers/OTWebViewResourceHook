@@ -18,15 +18,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    [self.webView setResourceRequestWillSendCallback:^(NSMutableURLRequest *request) {
-        NSLog(@"%@", request.URL);
-    }];
     [self.view addSubview:self.webView];
-    
     [self loadRequest];
+    
+    
+    //hook magic starts here
+    [self.webView setResourceRequestWillSendCallback:^(NSMutableURLRequest *request) {
+        //make request with a specific key use kvc
+        //then check this key in your custom NSURLProtocol to do additional things
+        NSLog(@"%@", request);
+    }];
 }
 
 - (void)viewDidLayoutSubviews
