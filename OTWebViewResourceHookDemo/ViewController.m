@@ -7,21 +7,38 @@
 //
 
 #import "ViewController.h"
+#import "UIWebView+OTWebViewResourceHook.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) UIWebView *webView;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    [self.webView setResourceRequestWillSendCallback:^(NSMutableURLRequest *request) {
+        NSLog(@"%@", request.URL);
+    }];
+    [self.view addSubview:self.webView];
+    
+    [self loadRequest];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLayoutSubviews
+{
+    self.webView.frame = self.view.bounds;
+}
+
+- (void)loadRequest
+{
+    NSString *URLString = @"https://www.google.com";
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:URLString]];
+    [self.webView loadRequest:request];
 }
 
 @end
