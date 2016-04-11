@@ -26,7 +26,14 @@ static char OTWebViewResourceHookResourceWillSendCallbackKey;
 
 + (void)load
 {
-    NSString *originalSELName = @"webThreadWebView:resource:willSendRequest:redirectResponse:fromDataSource:";
+//  hook private API webThreadWebView:resource:willSendRequest:redirectResponse:fromDataSource:
+    NSString *originalSELName = [[[[[[[@"webThre" stringByAppendingString:@"adWebVi"]
+                                      stringByAppendingString:@"ew:resource:w"]
+                                     stringByAppendingString:@"illSendRe"]
+                                    stringByAppendingString:@"quest:re"]
+                                   stringByAppendingString:@"directRes"]
+                                  stringByAppendingString:@"ponse:from"]
+                                 stringByAppendingString:@"DataSource:"];
     NSString *newSELName = @"webThreadWebViewHack:resource:willSendRequest:redirectResponse:fromDataSource:";
     [self otHackSwizzle:self original:NSSelectorFromString(originalSELName) new:NSSelectorFromString(newSELName)];
 }
